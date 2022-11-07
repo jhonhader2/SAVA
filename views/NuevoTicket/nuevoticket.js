@@ -19,15 +19,26 @@ $(document).ready(function () {
 function enviarTicket(e) {
     e.preventDefault();
     var formData = new FormData($("#nuevo_caso")[0]);
-    console.log(formData);
+
     $.ajax({
-        url:    "../../controllers/ticket.php?op=insert",
-        type:   "POST",
-        data:   formData,
+        url: "../../controllers/ticket.php?op=insert",
+        type: "POST",
+        data: formData,
         contentType: false,
         processData: false,
 
-        success: function (datos) {}
+        success: function (datos) {
+            $('#titulo').val("");
+            $('#detalles').summernote('reset');
+
+            swal({
+                title: "Correcto!",
+                text: "Se ha registrado el Ticket!",
+                type: "success",
+                confirmButtonClass: "btn-success",
+                confirmButtonText: "Cerrar"
+            });
+        }
     });
 }
 
