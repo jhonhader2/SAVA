@@ -47,7 +47,7 @@ if (isset($_SESSION['id'])) {
 
                     <h5 class="m-t-lg with-border">Detalles del caso</h5>
 
-                    <form id="nuevo_caso" name="nuevo_caso" method="POST"  autocomplete="off">
+                    <form id="nuevo_caso" name="nuevo_caso" method="POST" autocomplete="off">
                         <input type="hidden" class="form-control" name="id_user" id="id_user" value="<?= $_SESSION['id'] ?>">
 
                         <div class="form-group row">
